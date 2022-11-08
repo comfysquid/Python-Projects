@@ -1,31 +1,41 @@
 name = input("What is your name?: ")
+
 print("Hello", name)
 
 hours = float(input("How many hours did you work?: "))
-rate = float(input("What is your hourly rate: "))
-
+rate = float(input("What is your hourly rate: $"))
 pay = round((hours*rate), 2)
 
-print("Your pay is", pay)
+print("Your pay is $", pay)
 
 
 pizzaSale = ''
-slicePrice = 1.50
+slicePrice = 1
+pizzaPrice = (slicePrice * 7)
 pizza = 8
 
-pizzaSale = input("Did you want a slice of pizza? Yes or No? ")
-if pizzaSale.capitalize() == "Yes":
-    slices = int(input("How many slices did you want?: "), 0)
-    if slices <= 8:
-        salePrice = (slices*slicePrice)
-        print("The cost will be", round((salePrice), 2))
-        if (pay >= salePrice):
-            print("There are {} slices left".format(pizza-slices))
-            print("Your remaining pay is ", float((pay-salePrice)))
-        else:
-            print("You too broke")
+
+def saleTime():
+    print("The cost will be", round((salePrice), 2))
+    if (pay >= salePrice):
+        print("There are {} slices left in this pizza".format(pizza-slices))
+        print("Your remaining pay is $", float((pay-salePrice)))
     else:
-        print("We've only got 8 slices")
+        print("You too broke")
+
+
+pizzaSale = input("Did you want some pizza? Yes or No? ")
+if pizzaSale.capitalize() == "Yes":
+    print("A slice is $", slicePrice, "and a whole pizza is $", pizzaPrice)
+    slices = int(input("How many slices did you want?: "), 0)
+    if slices < 8 and slices > 0:
+        salePrice = (slices*slicePrice)
+        saleTime()
+    elif slices == 8:
+        salePrice = pizzaPrice
+        saleTime()
+    else:
+        print("Slices or a whole pizza are your only options.")
 
 elif pizzaSale.capitalize() == "No":
     print("Who hates pizza? What is wrong with you?")
