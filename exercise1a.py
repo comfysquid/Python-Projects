@@ -16,7 +16,7 @@ pizza = 8
 
 
 def saleTime():
-    print("The cost will be", round((salePrice), 2))
+    print("The cost will be $", round((salePrice), 2))
     if (pay >= salePrice):
         print("There are {} slices left in this pizza".format(pizza-slices))
         print("Your remaining pay is $", float((pay-salePrice)))
