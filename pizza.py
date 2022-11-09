@@ -1,12 +1,19 @@
 name = input("What is your name?: ")
-
+# Has to be a word, need to enforce this
 print("Hello", name)
 
-hours = float(input("How many hours did you work?: "))
-rate = float(input("What is your hourly rate: $"))
-pay = round((hours*rate), 2)
-
-print("Your pay is $", pay)
+try:
+    hours = float(input("How many hours did you work?: "))
+    rate = float(input("What is your hourly rate: $"))
+    if hours > 40:
+        pay = round((hours*(rate*1.5)), 2)
+    elif hours <= 0:
+        pay = 0
+    else:
+        pay = round((hours*rate), 2)
+    print("Your pay is $", pay)
+except:
+    print("Please enter a number")
 
 
 pizzaSale = ''
@@ -16,9 +23,9 @@ pizza = 8
 
 
 def saleTime():
-    print("The cost will be $", round((salePrice), 2))
+    print("The cost will be", round((salePrice), 2))
     if (pay >= salePrice):
-        print("There are {} slices left in this pizza".format(pizza-slices))
+        print(f"There are {pizza-slices} slices left in this pizza")
         print("Your remaining pay is $", float((pay-salePrice)))
     else:
         print("You too broke")
