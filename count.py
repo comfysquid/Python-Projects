@@ -1,4 +1,6 @@
 largest = None
+count = 0
+total = 0
 
 while True:
     line = input("Enter a number: \n")
