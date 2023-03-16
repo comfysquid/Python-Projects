@@ -3,7 +3,7 @@ name = input("What is your name?: ")
 print("Hello", name)
 
 
-def saleTime():
+def sale_time():
     print("The cost will be", round((salePrice), 2))
     if (x >= salePrice):
         print(f"There are {pizza-slices} slices left in this pizza")
@@ -33,25 +33,25 @@ except:
     print("Please enter a number")
 
 
-pizzaSale = ''
-slicePrice = 1
-pizzaPrice = (slicePrice * 7)
+pizza_sale = ''
+slice_price = 1
+pizza_price = (slice_price * 7)
 pizza = 8
 
-pizzaSale = input("Did you want some pizza? Yes or No? ")
-if pizzaSale.capitalize() == "Yes":
-    print("A slice is $", slicePrice, "and a whole pizza is $", pizzaPrice)
+pizza_sale = input("Did you want some pizza? Yes or No? ")
+if pizza_sale.capitalize() == "Yes":
+    print("A slice is $", slice_price, "and a whole pizza is $", pizza_price)
     slices = int(input("How many slices did you want?: "), 0)
     if slices < 8 and slices > 0:
-        salePrice = (slices*slicePrice)
-        saleTime()
+        salePrice = (slices*slice_price)
+        sale_time()
     elif slices == 8:
-        salePrice = pizzaPrice
-        saleTime()
+        salePrice = pizza_price
+        sale_time()
     else:
         print("Slices or a whole pizza are your only options.")
 
-elif pizzaSale.capitalize() == "No":
+elif pizza_sale.capitalize() == "No":
     print("Who hates pizza? What is wrong with you?")
 
 else:
